@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>TTS bot</title>
-  <script src="tmi.min.js"></script>
+  <script src="emoji-strip.js"></script>
+  <script src="tmi.min.js"></script> <!-- https://tmijs.com/ -->
 </head>
 <body>
     <span id ="status">Status: não conectado à Twitch.</span>
@@ -15,5 +16,6 @@
   </select>
   <script src="index.js"></script>
   <button onclick="connect()" id="conectarbtn">Conectar</button>
+  <button onclick="resetqueue()" id="conectarbtn">Deu merda</button>
 </body>
 </html>

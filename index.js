@@ -1,5 +1,6 @@
 var synth = window.speechSynthesis;
 var voiceSelect = document.querySelector('select');
+
 // voices = synth.getVoices();
 var voices = [];
 var ptbrIndex = -1;
@@ -56,6 +57,7 @@ function connect() {
         if(self) return;
         msg = message.toLowerCase();
         if(msg.startsWith("!voz") === true) {
+            msg = emojiStrip(msg);
             msg = msg.replace('!voz', '').trim();
             msg = msg.substring(0, 300); // comprimento máximo da mensagem.
             // client.say(channel, `@${tags.username}, ` + msg);
@@ -89,3 +91,6 @@ function connect() {
     
 }
 
+function resetqueue() {
+    synth.cancel();
+}
