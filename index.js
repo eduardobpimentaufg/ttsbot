@@ -42,11 +42,7 @@ function connect() {
             reconnect: true,
             secure: true
         },
-        identity: {
-            username: 'ttsbot69',
-            password: 'oauth:pq94r3yrgifxqgfuj9bdfjfchf2gxq'
-        },
-        channels: [ 'bizarelli' ]
+        channels: [ document.querySelector("#channel_name").value ]
     });
     // client.connect().catch(console.error);
     client.connect().catch((e) => {
@@ -59,7 +55,7 @@ function connect() {
         if(msg.startsWith("!voz") === true) {
             msg = emojiStrip(msg);
             msg = msg.replace('!voz', '').trim();
-            msg = msg.substring(0, 300); // comprimento máximo da mensagem.
+            msg = msg.substring(0, document.querySelector("#size_limit").value); // comprimento máximo da mensagem.
             // client.say(channel, `@${tags.username}, ` + msg);
             // console.log(channel);
             var frase = new SpeechSynthesisUtterance(msg);
@@ -76,7 +72,7 @@ function connect() {
     client.on("connected", (addr, port) => {
         console.log("Conectou à Twitch");
         document.querySelector("#status").textContent = "Status: conectado à Twitch";
-        client.say("#bl00dshoot", 'Bot de TTS conectado.');
+        // client.say("#bl00dshoot", 'Bot de TTS conectado.');
     });
     client.on("connecting", (addr, port) => {
         console.log("Conectando à Twitch");
