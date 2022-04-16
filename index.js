@@ -45,7 +45,7 @@ function connect() {
             username: 'ttsbot69',
             password: 'oauth:pq94r3yrgifxqgfuj9bdfjfchf2gxq'
         },
-        channels: [ 'bl00dshoot' ]
+        channels: [ 'bizarelli' ]
     });
     // client.connect().catch(console.error);
     client.connect().catch((e) => {
